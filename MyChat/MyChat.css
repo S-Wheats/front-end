@@ -17,6 +17,11 @@ body, html {
     text-align: center;
 }
 
+.chat {
+    display: flex; /* 이 속성으로 인해 .chat 내의 모든 자식 요소는 가로로 정렬됩니다. */
+    justify-content: space-around; /* 자식 요소 간에 공간을 균등하게 배분 */
+}
+
 .chat-list {
     display: flex;
     justify-content: space-around;
@@ -30,6 +35,7 @@ body, html {
     height: 50px;
     border-radius: 25px;
     background-color: blue;
+    margin: 5px;
 }
 
 .chat-window {
