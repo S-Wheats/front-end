@@ -46,23 +46,23 @@
     <p class="px-3 pt-2 text-xm font-bold">자주보는 채팅방</p>
     </div>
     <div class="flex">
-        <button class="p-1">
+        <button class="p-1 flex-1">
           <img src="chatpre.png" class="p-1"/>
           <p class="text-center text-black text-xs pt-1">우주공강</p>
         </button>
-        <button class="p-1">
+        <button class="p-1 flex-1">
             <img src="chatpre.png" class="p-1"/>
           <p class="text-center text-black text-xs pt-1">컴공 19학..</p>
         </button>
-        <button class="p-1">
+        <button class="p-1 flex-1">
             <img src="chatpre.png" class="p-1"/>
           <p class="text-center text-black text-xs pt-1">일본 음식</p>
         </button>
-        <button class=" p-1">
+        <button class=" p-1 flex-1">
             <img src="chatpre.png" class="p-1"/>
           <p class="text-center text-black text-xs pt-1">엉생 작작..</p>
         </button>
-        <button class=" p-1">
+        <button class=" p-1 flex-1">
             <img src="chatpre.png" class="p-1"/>
             <p class="text-center text-black text-xs pt-1 pb-2">모프 조별</p>
         </button>
@@ -101,20 +101,20 @@
     </div>
   </div>
     
-  <div id="map" style="width:100%;height:400px;"></div>
+  <div id="map" style="width:100%;height:400px;"></div> <!--지도 크기 좌우 전체 상하 400픽셀-->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7fcd5860c48f5dca21389c10aa7dbd0b"></script>
 	<script>
 		var container = document.getElementById('map');
 		var options = {
-			center: new kakao.maps.LatLng(37.64388077797, 127.110083097611),
-			level: 1
+      center: new kakao.maps.LatLng(37.64388077797, 127.110083097611), //지도 중심좌표는 '토리코코로'
+			level: 1 //기본 확대 상태 최대
 		};
 
 		var map = new kakao.maps.Map(container, options);
 	</script>
 <br>
 <br>
-<br>
+<br><!--하단바 간격유지용 break-->
 </div>
 
 
@@ -123,7 +123,7 @@
   <!-- 하단바 -->
   <div class="fixed bottom-0 left-0 right-0 bg-white shadow-md z-10"> <!-- 하단바 베이스 생성-->
     <div class="flex justify-around py-2"> <!-- Flex 컨테이너 생성-->
-      <div class="flex flex-col items-center" onclick="location.href='/MyPage.html'">
+      <div class="flex flex-col items-center" onclick="location.href='./MyPage.html'">
         <svg data-slot="icon" class="w-8 h-8" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
         </svg>
@@ -135,13 +135,13 @@
         </svg>
         <span class="text-xs">포장예약</span>
       </div>
-      <div class="flex flex-col items-center" onclick="location.href='/front-end/index.html'">
+      <div class="flex flex-col items-center" onclick="location.href='./index.html'">
         <svg data-slot="icon" class="w-8 h-8" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
         </svg>
         <span class="text-xs">홈</span>
       </div>
-      <div class="flex flex-col items-center" onclick="location.href='../front-end/MySNS.html'">
+      <div class="flex flex-col items-center" onclick="location.href='./MySNS.html'">
         <svg data-slot="icon" class="w-8 h-8" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"></path>
         </svg>
