@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
-    <title>Main</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+  <title>Main</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 </head>
+
 <body>
 <div class="bg-gray-200 outline outline-black" style="max-width: 500px">
 
@@ -29,13 +30,13 @@
 <!--상단 흰색 구역-->
 <!--학식 뭐먹지? 밥친구 블럭--> <!--TODO 하단 배너 href 연동-->
 <div class="bg-white rounded-b-lg">
-    <div class="px-10 pt-10 pb-5"> 
-        <button class="w-full bg-blue-300 text-white text-xl font-semibold rounded-lg shadow-md shadow-gray-500 outline outline-white">
+    <div class="px-3 pt-7 pb-5"> 
+        <div class="w-full bg-blue-300 text-white text-xl font-semibold rounded-lg shadow-md shadow-gray-500 outline outline-white text-center" onClick="location.href='./MySNS.html'">
           <p class="pt-1"> 혼밥은 용서할 수 없다!</p>
           <p class="pb-1"> 밥친구 찾으러 가기 클릭!!</p>
-        </button>
+        </div>
     </div>
-    <div class="px-10 pt-2 pb-10"> 
+    <div class="px-3 pt-2 pb-5"> 
         <button class="w-full bg-pink-300 text-white text-xl font-semibold rounded-lg shadow-md shadow-gray-500 outline outline-white">
           <p class="pt-1">오늘학식 뭐먹지?</p>
           <p class="pb-1">고민없이 이건 어때?</p>
@@ -46,32 +47,42 @@
     <div>
     <p class="px-3 pt-2 text-xm font-bold">자주보는 채팅방</p>
     </div>
-    <div class="flex"> <!--TODO 채팅방 기본 이미지 추가, 채팅방과 연동후 Redirect-->
-        <button class="p-1 flex-1">
-          <img src="chatpre.png" class="p-1"/>
-          <p class="text-center text-black text-xs pt-1">우주공강</p>
+    <div class="flex"> <!--TODO 채팅방과 연동후 Redirect-->
+        <div class="p-1 flex-1 flex flex-col items-center">
+          <svg data-slot="icon" class="w-8, h-8" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"></path>
+          </svg>
+          <p class="text-center text-black text-xs pt-1 font-semibold">우주공강</p>
+        </div>
+        <div class="p-1 flex-1 flex flex-col items-center">
+          <svg data-slot="icon" class="w-8, h-8" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"></path>
+          </svg>
+          <p class="text-center text-black text-xs pt-1 font-semibold">컴공 19학..</p>
+        </div>
+        <button class="p-1 flex-1 flex flex-col items-center">
+          <svg data-slot="icon" class="w-8, h-8" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"></path>
+          </svg>
+          <p class="text-center text-black text-xs pt-1 font-semibold">일본 음식</p>
         </button>
-        <button class="p-1 flex-1">
-            <img src="chatpre.png" class="p-1"/>
-          <p class="text-center text-black text-xs pt-1">컴공 19학..</p>
+        <button class=" p-1 flex-1 flex flex-col items-center">
+          <svg data-slot="icon" class="w-8, h-8" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"></path>
+          </svg>
+          <p class="text-center text-black text-xs pt-1 font-semibold">엉생 작작..</p>
         </button>
-        <button class="p-1 flex-1">
-            <img src="chatpre.png" class="p-1"/>
-          <p class="text-center text-black text-xs pt-1">일본 음식</p>
-        </button>
-        <button class=" p-1 flex-1">
-            <img src="chatpre.png" class="p-1"/>
-          <p class="text-center text-black text-xs pt-1">엉생 작작..</p>
-        </button>
-        <button class=" p-1 flex-1">
-            <img src="chatpre.png" class="p-1"/>
-            <p class="text-center text-black text-xs pt-1 pb-2">모프 조별</p>
+        <button class=" p-1 flex-1 flex flex-col items-center">
+          <svg data-slot="icon" class="w-8, h-8" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"></path>
+          </svg>
+            <p class="text-center text-black text-xs pt-1 pb-2 font-semibold">모프 조별</p>
         </button>
     </div>
     
 </div>
 
-    <p class="text-center text-xm pt-2 pb-2"> 밀어서 커뮤니티로 => </p>
+    <p class="text-center text-xm pt-2 pb-2 text-gray-400 font-bold"> 밀어서 커뮤니티로 → </p>
 
 <!--하단 흰색 구역-->
 <!--한중일 양-->
