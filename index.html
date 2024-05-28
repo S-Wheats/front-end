@@ -28,14 +28,14 @@
 </div>
 
 <!--상단 흰색 구역-->
-<!--학식 뭐먹지? 밥친구 블럭--> <!--TODO 하단 배너 href 연동-->
+<!--학식 뭐먹지? 밥친구 블럭--> 
 <div class="bg-white rounded-b-lg">
     <div class="px-3 pt-7 pb-5"> 
         <div class="w-full bg-blue-300 text-white text-xl font-semibold rounded-lg shadow-md shadow-gray-500 outline outline-white text-center" onClick="location.href='./MySNS.html'">
           <p class="pt-1"> 혼밥은 용서할 수 없다!</p>
           <p class="pb-1"> 밥친구 찾으러 가기 클릭!!</p>
         </div>
-    </div>
+    </div> <!--TODO 하단 배너 href 연동-->
     <div class="px-3 pt-2 pb-5"> 
         <button class="w-full bg-pink-300 text-white text-xl font-semibold rounded-lg shadow-md shadow-gray-500 outline outline-white">
           <p class="pt-1">오늘학식 뭐먹지?</p>
@@ -47,7 +47,7 @@
     <div>
     <p class="px-3 pt-2 text-xm font-bold">자주보는 채팅방</p>
     </div>
-    <div class="flex"> <!--TODO 채팅방과 연동후 Redirect-->
+    <div class="flex mt-1"> <!--TODO 채팅방과 연동후 Redirect-->
         <div class="p-1 flex-1 flex flex-col items-center">
           <svg data-slot="icon" class="w-8, h-8" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"></path>
@@ -88,9 +88,9 @@
 <!--한중일 양-->
 <!--지도-->
 <div class="bg-white rounded-t-lg"> 
-<p style="font-family:'Pretendard'" class="pt-10 text-center text-3xl pb-10">대삼먹 지도</p>
+<p class="pt-10 text-center text-3xl pb-10">대삼먹 지도</p>
 <div class="px-10 pb-3">
-    <div class="bg-gray-300 text-black text-xl font-semibold rounded-lg shadow-md shadow-gray-500 outline outline-white"> 
+    <div class="bg-gray-300 text-black text-xl font-semibold rounded-lg shadow-md shadow-gray-500 outline outline-white p-2 mb-2" > 
         <p class="text-center text-xm pt-2 pb-1">내가 먹고싶은 음식을 지도에서!</p>
         <div class="flex">
             <div class="flex-1 flex flex-col items-center"> <!--TODO 아래 카테고리에 대한 이미지 추가, Kakao API 를 이용한 값 받아오기.-->
