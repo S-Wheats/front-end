@@ -6,6 +6,7 @@
   <title>Main</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  
 </head>
 
 <body>
@@ -89,56 +90,145 @@
 <!--지도-->
 <div class="bg-white rounded-t-lg"> 
 <p class="pt-10 text-center text-3xl pb-10">대삼먹 지도</p>
-<div class="px-10 pb-3">
-    <div class="bg-gray-300 text-black text-xl font-semibold rounded-lg shadow-md shadow-gray-500 outline outline-white p-2 mb-2" > 
-        <p class="text-center text-xm pt-2 pb-1">내가 먹고싶은 음식을 지도에서!</p>
-        <div class="flex">
-            <div class="flex-1 flex flex-col items-center"> <!--TODO 아래 카테고리에 대한 이미지 추가, Kakao API 를 이용한 값 받아오기.-->
-              <button class="bg-white text-gray-800 font-bold py-2 px-4 rounded flex justify-center items-center"> <img src="chatpre.png"/></button>
-              <p class="text-center text-black text-xm pt-1">한식</p>
+<div class="px-4 pb-3">
+    <div class="bg-gray-300 text-black text-lg font-semibold rounded-lg shadow-md shadow-gray-500 outline outline-white p-2 mb-2"> 
+        <p class="text-center text-base pt-2 pb-1">내가 먹고싶은 음식을 지도에서!</p>
+        <div class="flex flex-row">
+            <div class="flex-1 flex flex-col items-center">
+                <button id="koreanFoodBtn" class="bg-white text-gray-800 font-bold py-2 px-3 rounded flex justify-center items-center">
+                    <img src="chatpre.png" class="h-8 w-8 md:h-12 md:w-12"/>
+                </button>
+                <p class="text-center text-black text-sm md:text-lg pt-1 md:pt-2">한식</p>
             </div>
             <div class="flex-1 flex flex-col items-center">
-              <button class="bg-white text-gray-800 font-bold py-2 px-4 rounded flex justify-center items-center"> <img src="chatpre.png"/></button>
-              <p class="text-center text-black text-xm pt-1">일식</p>
+                <button id="japaneseFoodBtn" class="bg-white text-gray-800 font-bold py-2 px-3 rounded flex justify-center items-center">
+                    <img src="chatpre.png" class="h-8 w-8 md:h-12 md:w-12"/>
+                </button>
+                <p class="text-center text-black text-sm md:text-lg pt-1 md:pt-2">일식</p>
             </div>
             <div class="flex-1 flex flex-col items-center">
-              <button class="bg-white text-gray-800 font-bold py-2 px-4 rounded flex justify-center items-center"> <img src="chatpre.png"/></button>
-              <p class="text-center text-black text-xm pt-1 flex-col">양식</p>
+                <button id="westernFoodBtn" class="bg-white text-gray-800 font-bold py-2 px-3 rounded flex justify-center items-center">
+                    <img src="chatpre.png" class="h-8 w-8 md:h-12 md:w-12"/>
+                </button>
+                <p class="text-center text-black text-sm md:text-lg pt-1 md:pt-2">양식</p>
             </div>
             <div class="flex-1 flex flex-col items-center">
-              <button class="bg-white text-gray-800 font-bold py-2 px-4 rounded flex justify-center items-center"> <img src="chatpre.png"/></button>
-              <p class="text-center text-black text-xm pt-1">중식</p>
+                <button id="chineseFoodBtn" class="bg-white text-gray-800 font-bold py-2 px-3 rounded flex justify-center items-center">
+                    <img src="chatpre.png" class="h-8 w-8 md:h-12 md:w-12"/>
+                </button>
+                <p class="text-center text-black text-sm md:text-lg pt-1 md:pt-2">중식</p>
             </div>
         </div>
     </div>
-  </div>
+</div>
+
+
     
-  <div id="map" style="width:100%;height:400px;"></div> <!--지도 크기 좌우 전체 상하 400픽셀-->
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7fcd5860c48f5dca21389c10aa7dbd0b"></script>
-	<script>
-		var container = document.getElementById('map');
-		var options = {
-      center: new kakao.maps.LatLng(37.64388077797, 127.110083097611), //지도 중심좌표는 '토리코코로'
-			level: 1 //기본 확대 상태 최대
-		};
+  <div id="map" style="width:100%;height:400px;"></div>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7fcd5860c48f5dca21389c10aa7dbd0b"></script>
+<script>
+	
+  var container = document.getElementById('map');
+var options = {
+    center: new kakao.maps.LatLng(37.64388077797, 127.110083097611), // 지도 중심좌표는 '토리코코로'
+    level: 1 // 기본 확대 상태 최대
+};
 
-		var map = new kakao.maps.Map(container, options);
+var map = new kakao.maps.Map(container, options);
 
-    //지도 클릭위치에 표출할 마커
-      var marker = new kakao.maps.Marker({
-        //지도 중심좌표에 마커를 생성
-        position: map.getCenter()
-      });
+// 지도 클릭위치에 표출할 마커
+var marker = new kakao.maps.Marker({
+    position: map.getCenter()
+});
 
-      //지도에 마커 표시
-      marker.setMap(map);
+marker.setMap(map);
 
-      kakao.maps.event.addListener(map, 'click', function(mouseEvent){
+//정보 창 생성
+var infowindow = new kakao.maps.InfoWindow({
+    content: '' /* 정보 창 내용은 나중에 설정 */
+});
 
-        var latlng = mouseEvent.latLng;
-        marker.setPosition(latlng);
-        
-      });
+
+// 지도 클릭 이벤트 리스너
+kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+    var latlng = mouseEvent.latLng;
+    marker.setPosition(latlng);
+    // 예시 음식점 정보 (데이터 베이스 구축 필요)
+    var restaurantInfo = "<div style='padding:23px;'>"
+                       + "<p>토리코코로</p>"
+                       + "<p>주소: 서울특별시 성북구 정릉로 77</p>"
+                       + "<p>전화번호: 02-1234-5678</p>"
+                       + "<p>운영 시간: 10:00 ~ 22:00</p>"
+                       + "</div>";
+    infowindow.setContent(restaurantInfo);
+    infowindow.setPosition(latlng);
+    infowindow.open(map, marker);
+});
+
+var firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    databaseURL: "YOUR_DATABASE_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+firebase.initializeApp(firebaseConfig);
+
+// Firebase에서 음식점 검색하기
+function searchPlaces(keyword) {
+    
+    var db = firebase.database().ref('restaurants/' + keyword);
+    
+    db.once('value', function(snapshot) {
+        var restaurants = snapshot.val();
+        displayMarkers(restaurants);
+    });
+}
+
+// 카카오맵에 마커 표시하기
+function displayMarkers(restaurants) {
+    var mapContainer = document.getElementById('map');
+    var mapOption = {
+        center: new kakao.maps.LatLng(37.64388077797, 127.110083097611), 
+        level: 1 
+    };
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+
+    for (var key in restaurants) {
+        var restaurant = restaurants[key];
+        var latlng = new kakao.maps.LatLng(restaurant.latitude, restaurant.longitude);
+        var marker = new kakao.maps.Marker({
+            position: latlng,
+            map: map
+        });
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="padding:5px;font-size:12px;">' + restaurant.name + '</div>'
+        });
+        kakao.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map, marker);
+        });
+    }
+}
+
+// 버튼 클릭 이벤트 리스너 설정
+document.getElementById('koreanFoodBtn').addEventListener('click', function() {
+    searchPlaces('한식');
+});
+
+document.getElementById('japaneseFoodBtn').addEventListener('click', function() {
+    searchPlaces('일식');
+});
+
+document.getElementById('westernFoodBtn').addEventListener('click', function() {
+    searchPlaces('양식');
+});
+
+document.getElementById('chineseFoodBtn').addEventListener('click', function() {
+    searchPlaces('중식');
+});
+
 
     /* var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png',
     imageSize = new Kakao.maps.Size(64, 69),
