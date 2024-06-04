@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/MySearch.css">
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=65daa08b1603b288c2202f604ff44506&libraries=services"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7fcd5860c48f5dca21389c10aa7dbd0b&libraries=services"></script>
     
 </head>
 <body class="bg-gray-100">
@@ -36,7 +36,7 @@
           ></path>
         </svg>
       </button>
-        <input type="text" id="keyword" placeholder="검색어를 입력해주세요" class="w-full p-4 border border-gray-300 rounded-t">
+        <input type="text" id="keyword" placeholder="검색어를 입력해주세요" class="w-full p-4 border border-gray-300 rounded-t" onKeyPress="if (event.keyCode==13) { searchPlaces();}">
         
         
     </div>
